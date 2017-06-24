@@ -2,6 +2,10 @@
 $functions = Join-Path -Path $moduleRoot -ChildPath 'Public'
 $internal = Join-Path -Path $moduleRoot -ChildPath 'Internal'
 
+Write-Warning "Please mind, that this module is no longer supported."
+Write-Warning "We strongly recommend you to switch to 'JiraPS'."
+Write-Warning "You can find more information at https://atlassianPS.org"
+
 # Import all .ps1 files that aren't Pester tests, and export the names of each one as a module function
 $items = Resolve-Path "$functions\*.ps1" | Where-Object -FilterScript { -not ($_.ProviderPath.Contains(".Tests.")) }
 foreach ($i in $items)
