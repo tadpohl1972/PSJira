@@ -61,6 +61,15 @@ Here's a shorthand version when only using one component:
                 name = 'Component 1'
         })
     }
+    
+ Here's an example that sets the assignee and adds labels:
+ .. code-block:: PowerShell
+ $Fields = @{
+assignee = @{name="<Jira Username>"}
+
+}
+
+New-JiraIssue -Project SYS -IssueType Task -Summary 'Test issue from PowerShell' -Description "This is a sample issue created by $env:USERNAME on $env:COMPUTERNAME." -Labels 'Test','Fake' -fields $Fields
 
 Custom Fields
 =============
